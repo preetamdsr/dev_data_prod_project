@@ -24,13 +24,13 @@ shinyUI(pageWithSidebar(
       tabPanel("Code",
                h3("For complete source code please go to the following link"),
                wellPanel(
-                 helpText(a("Source Code",href="http://www.google.com")
+                 helpText(a("Source Code",href="http://github.com/preetamdsr/dev_data_prod_project")
                  )
                )),
       tabPanel("Help",
                h3("Please go through the Read me file, if you are having any difficulty"),
                wellPanel(
-                 helpText(a("Read me",href="http://www.google.com")
+                 helpText(a("Read me",href="http://rpubs.com/preetamdsr/eccapp")
                  )
                )
         )   
