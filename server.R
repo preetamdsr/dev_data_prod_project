@@ -1,0 +1,23 @@
+library(shiny)
+library(datasets)
+e<-cbind(euro.cross,1/euro)
+colnames(e)[12]<-"EURO"
+e<-rbind(e,c(euro,1))
+rownames(e)[12]<-"EURO"
+shinyServer(
+  function(input,output){    
+    output$oid1<-renderPrint({
+      paste(input$in_num,input$curr1)
+    }      
+      )
+    output$oid2<-renderPrint({
+      paste("From",input$curr1,"to",input$curr2)
+    })
+    output$oid3<-renderPrint({
+      if(input$curr1=="euro"){
+        as.numeric(input$in_num)*as.numeric(euro[input$curr2])
+      }
+      paste(round((as.numeric(input$in_num)*as.numeric(e[input$curr1,input$curr2])),3),input$curr2)
+    })    
+  }
+  )
